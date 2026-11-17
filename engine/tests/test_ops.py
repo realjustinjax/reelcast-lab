@@ -302,9 +302,13 @@ class TestJobFile(Base):
 class TestEndCardBuilder(Base):
     def test_page_is_built_from_arguments_only(self):
         out = self.tmp / "card" / "end-card.png"
+        icons = self.tmp / "icons"
+        icons.mkdir()
+        for n in ("alpha", "beta"):     # made-up icons: the kit ships none
+            (icons / f"{n}.svg").write_text('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>x</title><circle cx="12" cy="12" r="9"/></svg>')
         r = subprocess.run([sys.executable, str(KIT / "brand" / "end-card" / "build_end_card.py"), "--name", "Sam <Rivers>",
-                            "--title", "Gardener & writer", "--platforms", "instagram,tiktok", "--bg", "#102030",
-                            "--out", str(out), "--html-only"], capture_output=True, text=True)
+                            "--title", "Gardener & writer", "--platforms", "alpha,beta", "--icons-dir", str(icons),
+                            "--bg", "#102030", "--out", str(out), "--html-only"], capture_output=True, text=True)
         self.assertEqual(r.returncode, 0, r.stderr)
         page = out.with_suffix(".html").read_text()
         self.assertNotIn("{{", page)
@@ -313,6 +317,10 @@ class TestEndCardBuilder(Base):
         self.assertIn("#102030", page)
         self.assertEqual(page.count('class="ic"'), 2)
         self.assertFalse(out.exists())
+        none = subprocess.run([sys.executable, str(KIT / "brand" / "end-card" / "build_end_card.py"), "--name", "x",
+                               "--platforms", "alpha", "--out", str(out), "--html-only"], capture_output=True, text=True)
+        self.assertNotEqual(none.returncode, 0)
+        self.assertIn("no icon for platform", none.stderr)
         bad = subprocess.run([sys.executable, str(KIT / "brand" / "end-card" / "build_end_card.py"), "--name", "x",
                               "--bg", "red;}", "--out", str(out), "--html-only"], capture_output=True, text=True)
         self.assertNotEqual(bad.returncode, 0)

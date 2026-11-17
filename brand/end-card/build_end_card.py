@@ -14,7 +14,8 @@ Everything on the card comes from the arguments; nothing is baked in:
   --bg          background colour, hex (default #1f2937)
   --accent      accent colour for the kicker and the photo ring, hex (default #4cc9f0)
   --text        text colour, hex (default #ffffff)
-  --platforms   comma list of icon names; each needs icons/<name>.svg (the folder ships empty, see icons/README.txt)
+  --platforms   comma list of icon names; each needs <name>.svg in the icons folder (ships empty, see icons/README.txt)
+  --icons-dir   another folder of icons to use instead
   --font        a .ttf or .otf file (default: the kit's brand/default/fonts/Inter-Bold.otf)
   --out         where to write the PNG (default: end-card.png in the current folder)
   --html-only   write the filled page next to --out (same name, .html) and stop; no picture
@@ -61,10 +62,11 @@ def file_url(path, what):
     return p.as_uri()
 
 
-def icon(name):
-    p = HERE / "icons" / f"{name}.svg"
+def icon(name, icons_dir=None):
+    d = pathlib.Path(icons_dir).expanduser() if icons_dir else HERE / "icons"
+    p = d / f"{name}.svg"
     if not p.is_file():
-        have = ", ".join(sorted(x.stem for x in (HERE / "icons").glob("*.svg")))
+        have = ", ".join(sorted(x.stem for x in d.glob("*.svg"))) or "none (see icons/README.txt)"
         raise SystemExit(f"no icon for platform {name!r}; available: {have}")
     svg = re.sub(r"<title>.*?</title>", "", p.read_text())
     return svg.replace("<svg ", '<svg fill="#fff" ', 1)
@@ -73,7 +75,7 @@ def icon(name):
 def build_html(a):
     bg = colour(a.bg, "--bg")
     platforms = [x.strip().lower() for x in (a.platforms or "").split(",") if x.strip()]
-    icons = "\n".join(f'<div class="ic" style="background:{PLATFORM_BG.get(n, "#374151")}">{icon(n)}</div>'
+    icons = "\n".join(f'<div class="ic" style="background:{PLATFORM_BG.get(n, "#374151")}">{icon(n, a.icons_dir)}</div>'
                       for n in platforms)
     name = html.escape(a.name)
     values = {
@@ -106,6 +108,7 @@ def main(argv=None):
     ap.add_argument("--accent", default="#4cc9f0")
     ap.add_argument("--text", default="#ffffff")
     ap.add_argument("--platforms", default="")
+    ap.add_argument("--icons-dir", default=None, help="folder of <platform>.svg files (default: icons/ beside this script)")
     ap.add_argument("--font", default=str(DEFAULT_FONT))
     ap.add_argument("--out", default="end-card.png")
     ap.add_argument("--html-only", action="store_true")
