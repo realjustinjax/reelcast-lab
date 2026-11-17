@@ -1,0 +1,50 @@
+{
+ "_what": "An example edit plan with invented words. It shows the format only; it is not a real video. The words it points at are in transcript.example.json beside it (word numbers start at 0). Keys that start with an underscore are notes and are ignored by the renderer. Run the renderer with --help for the full format.",
+
+ "_inputs": "The working files the engine prepared for this run. Paths may be relative to this file.",
+ "inputs": {"video": "sdr.mp4", "audio": "audio.wav", "transcript": "transcript.example.json"},
+
+ "_outputs": "out_dir gets the five finished files. work_dir gets the renderer's own files (captions, cut lists).",
+ "out_dir": "finished",
+ "work_dir": "render",
+
+ "_look": "preset, end_card and fonts_dir may be left out; they then come from your brand folder, or the kit's neutral defaults. top_crop is the share of the raw frame height cut off the top (0.0 keeps it all). eye_line is where the eyes sit, as a share of the raw frame height.",
+ "top_crop": 0.0,
+ "eye_line": 0.43,
+
+ "_text": "Display fixes by word number. Timing never changes. An empty string joins that word onto the one before it. Here word 51 was heard as 'hole' and is shown as 'whole'.",
+ "text": {"51": "whole"},
+
+ "_key_words": "Word numbers shown in the accent colour. A few per line at most.",
+ "key_words": [18, 36, 42],
+
+ "_overrides": "Hand-set cut points in seconds, by word number. in_overrides sets where a range that STARTS at that word cuts in; out_overrides sets where a range that ENDS at that word cuts out. A hand-set cut point always wins, even between two ranges that sit next to each other in the transcript. Leave these empty unless a cut lands badly.",
+ "in_overrides": {"29": 13.12},
+ "out_overrides": {"28": 12.7},
+
+ "_versions": "Exactly these five names. ranges is a list of [first word, last word, zoom], both words included; zoom 1.0 is the normal frame, 1.1 a gentle punch-in. A name in place of the list (\"A_control\") reuses that version's ranges. change says in plain words the one thing this version changes against A. Here A skips the false start (words 0 to 12).",
+ "versions": {
+  "A_control": {
+   "change": "Control: the story as told, with the false start cut.",
+   "ranges": [[13, 21, 1.0], [22, 28, 1.0], [29, 37, 1.0], [38, 44, 1.1], [45, 47, 1.1], [48, 52, 1.0], [53, 56, 1.0]]
+  },
+  "B_onscreen_hook": {
+   "change": "Same cut as A, plus an on-screen hook for the first 3 seconds.",
+   "ranges": "A_control",
+   "hook": {"lines": ["Stop drowning", "your tomatoes"], "key_words": ["drowning"], "seconds": 3.0}
+  },
+  "C_cold_open": {
+   "change": "Same cut as A, with the finger test line moved to the very front.",
+   "ranges": [[38, 44, 1.1], [45, 47, 1.1], [13, 21, 1.0], [22, 28, 1.0], [29, 37, 1.0], [48, 52, 1.0], [53, 56, 1.0]]
+  },
+  "D_tight_cut": {
+   "change": "The same story, shorter: the tomato aside and the closing line are cut.",
+   "ranges": [[13, 21, 1.0], [29, 37, 1.0], [38, 44, 1.1], [45, 47, 1.1], [53, 56, 1.0]]
+  },
+  "E_visual_open": {
+   "change": "Same cut as A, opening on a 1.2x punch-in that eases out over 3 seconds.",
+   "ranges": "A_control",
+   "visual_open": {"start_zoom": 1.2, "ramp_s": 3.0}
+  }
+ }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "default_pop",
+  "_what": "The neutral ReelCast Lab caption look: big bold white words that pop in one at a time, key words in one accent colour, a dark outline and a soft shadow. To use your own look, copy this file to Lab_Data/brand/caption_preset.json in your content folder and change it there.",
+  "video": {
+    "width": 2160,
+    "height": 3840
+  },
+  "_fonts_note": "font_file must sit in Lab_Data/brand/fonts/ (yours) or brand/default/fonts/ (the kit's). weights.base is the font's family name as the file reports it.",
+  "font_file": "Inter-Bold.otf",
+  "weights": {
+    "base": "Inter Bold"
+  },
+  "_fontsize_note": "Sizes are written for a 3840 px tall frame and scale with the real frame height: 184 here is 92 at 1080x1920.",
+  "font_size_px": 184,
+  "_color_note": "speaker is the normal word colour. key is the accent for the one or two words per line that carry the point. Hex RGB without the #.",
+  "colors": {
+    "speaker": "FFFFFF",
+    "key": "4CC9F0"
+  },
+  "_layout_note": "Written for one upright talking head: captions sit at 71.5 percent from the top (below the mouth, above the app buttons), centred slightly left so the text clears the right edge buttons. 2 to 4 words per cue.",
+  "layout": {
+    "y_percent_from_top": 71.5,
+    "x_percent_from_left": 48,
+    "max_line_width_pct": 74,
+    "max_chars_per_line": 16,
+    "min_words_per_screen": 2,
+    "max_words_per_screen": 3,
+    "max_words_after_merge": 4
+  },
+  "shadow": {
+    "_note": "stroke_color is the outline around every letter, color and alpha the drop shadow. Pixel values are for the 3840 px frame. The quality check finds the captions by this outline colour, so keep it dark and unlike skin or wall tones.",
+    "color": "14213D",
+    "alpha": 64,
+    "offset_y": 6,
+    "blur": 1,
+    "stroke_px": 12,
+    "stroke_color": "14213D"
+  },
+  "animation": {
+    "_note": "Each word appears when it is spoken, starts at pop_from_pct of its size and settles over pop_ms, with a short fade. Words already spoken stay until the cue changes.",
+    "mode": "word_pop",
+    "pop_from_pct": 110,
+    "pop_ms": 120,
+    "fade_ms": 60
+  },
+  "timing": {
+    "pause_split_s": 0.6
+  }
+}

@@ -1,0 +1,32 @@
+ReelCast Lab
+Copyright (c) 2026 Jack of All Trades Solutions LLC. Licensed under the MIT License (see LICENSE).
+
+Not covered by that license: everything in examples/ and sample/. Those files
+show a real report and a sample recording. They may be viewed and used to test
+an installation. They may not be reused, republished or used to train models.
+
+Third party work this kit depends on
+------------------------------------
+
+Vibe Editing
+  https://github.com/maddexritter-rgb/vibe-editing
+  MIT License, Copyright (c) 2026 Vibe Editing.
+  Not included in this repository. The setup script downloads one fixed
+  version (commit a342d7173d49b6be43e477a0041aad6014fbf377) into vendor/.
+  ReelCast Lab uses its offline transcription script and reads its editing
+  playbooks. The default caption preset in brand/default/ follows the preset
+  format of that project. Vibe Editing's own setup, onboarding, upload and
+  publishing features are never run by this kit.
+
+Inter typeface (brand/default/fonts/Inter-Bold.otf)
+  https://github.com/rsms/inter
+  Copyright 2016 The Inter Project Authors.
+  Licensed under the SIL Open Font License, Version 1.1.
+  The license text is in brand/default/fonts/OFL.txt.
+
+Installed on your Mac by setup, not included here
+-------------------------------------------------
+
+faster-whisper, CTranslate2, NumPy, Pillow, fontTools, PyAV and their
+dependencies (Python packages, each under its own license), the Whisper
+speech model (downloaded on first use), ffmpeg, and Tesseract.

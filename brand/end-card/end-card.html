@@ -1,0 +1,39 @@
+<!doctype html>
+<!-- End card template (1080x1920). build_end_card.py fills in the placeholders below; do not open this file directly. -->
+<html><head><meta charset="utf-8">
+<style>
+  @font-face { font-family: "CardFont"; src: url("{{FONT_URL}}"); }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1080px; height:1920px; overflow:hidden; }
+  body {
+    font-family: "CardFont", -apple-system, "Helvetica Neue", Arial, sans-serif; font-weight:700;
+    color:{{TEXT}}; text-align:center; position:relative;
+    background: linear-gradient(180deg, {{BG}} 0%, {{BG}} 55%, {{BG2}} 100%);
+  }
+  .stack { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center;
+           justify-content:center; padding:0 70px {{PAD_BOTTOM}}px; }
+  .photo {
+    width:500px; height:500px; border-radius:50%; margin-bottom:84px;
+    background:#fff url("{{PHOTO_URL}}") center/cover no-repeat;
+    box-shadow: 0 0 0 12px {{BG}}, 0 0 0 20px {{ACCENT}}, 0 30px 80px rgba(0,0,0,.35);
+  }
+  .kicker { font-size:40px; letter-spacing:.13em; color:{{ACCENT}}; text-transform:uppercase; }
+  .name { margin-top:14px; font-size:{{NAME_PX}}px; letter-spacing:-.025em; line-height:1.05; }
+  .title { margin-top:22px; font-size:45px; opacity:.92; }
+  .on { margin-top:62px; font-size:32px; letter-spacing:.16em; opacity:.7; text-transform:uppercase; }
+  .row { margin-top:30px; display:flex; gap:44px; }
+  .ic { width:150px; height:150px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+        box-shadow:0 10px 30px rgba(0,0,0,.28); }
+  .ic svg { width:78px; height:78px; }
+  .logo { position:absolute; left:50%; bottom:200px; max-width:500px; max-height:160px; transform:translateX(-50%); }
+</style></head>
+<body>
+  <div class="stack">
+    {{PHOTO_BLOCK}}
+    <div class="kicker">{{KICKER}}</div>
+    <div class="name">{{NAME}}</div>
+    {{TITLE_BLOCK}}
+    {{PLATFORM_BLOCK}}
+  </div>
+  {{LOGO_BLOCK}}
+</body></html>

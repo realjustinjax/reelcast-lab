@@ -1,0 +1,348 @@
+{
+ "_what": "An invented transcript that goes with edit_plan.example.json. Real ones are written by the transcribe step into each run's work folder; the editor counts words from 0.",
+ "text": "Most gardens fail in the first month. Um, let me say that again. Most gardens fail because people water them too much. I killed three tomato plants that way. Now I check the soil with one finger first. Dry down to the knuckle means water. Damp means wait. That is the hole trick. Try it this week.",
+ "words": [
+  {
+   "word": "Most",
+   "start": 0.4,
+   "end": 0.7,
+   "prob": 0.97
+  },
+  {
+   "word": "gardens",
+   "start": 0.76,
+   "end": 1.17,
+   "prob": 0.97
+  },
+  {
+   "word": "fail",
+   "start": 1.23,
+   "end": 1.53,
+   "prob": 0.97
+  },
+  {
+   "word": "in",
+   "start": 1.59,
+   "end": 1.82,
+   "prob": 0.97
+  },
+  {
+   "word": "the",
+   "start": 1.88,
+   "end": 2.15,
+   "prob": 0.97
+  },
+  {
+   "word": "first",
+   "start": 2.21,
+   "end": 2.55,
+   "prob": 0.97
+  },
+  {
+   "word": "month.",
+   "start": 2.61,
+   "end": 2.95,
+   "prob": 0.97
+  },
+  {
+   "word": "Um,",
+   "start": 3.51,
+   "end": 3.74,
+   "prob": 0.97
+  },
+  {
+   "word": "let",
+   "start": 3.8,
+   "end": 4.07,
+   "prob": 0.97
+  },
+  {
+   "word": "me",
+   "start": 4.13,
+   "end": 4.36,
+   "prob": 0.97
+  },
+  {
+   "word": "say",
+   "start": 4.42,
+   "end": 4.69,
+   "prob": 0.97
+  },
+  {
+   "word": "that",
+   "start": 4.75,
+   "end": 5.05,
+   "prob": 0.97
+  },
+  {
+   "word": "again.",
+   "start": 5.11,
+   "end": 5.45,
+   "prob": 0.97
+  },
+  {
+   "word": "Most",
+   "start": 6.01,
+   "end": 6.31,
+   "prob": 0.97
+  },
+  {
+   "word": "gardens",
+   "start": 6.37,
+   "end": 6.78,
+   "prob": 0.97
+  },
+  {
+   "word": "fail",
+   "start": 6.84,
+   "end": 7.14,
+   "prob": 0.97
+  },
+  {
+   "word": "because",
+   "start": 7.2,
+   "end": 7.61,
+   "prob": 0.97
+  },
+  {
+   "word": "people",
+   "start": 7.67,
+   "end": 8.04,
+   "prob": 0.97
+  },
+  {
+   "word": "water",
+   "start": 8.1,
+   "end": 8.44,
+   "prob": 0.97
+  },
+  {
+   "word": "them",
+   "start": 8.5,
+   "end": 8.8,
+   "prob": 0.97
+  },
+  {
+   "word": "too",
+   "start": 8.86,
+   "end": 9.13,
+   "prob": 0.97
+  },
+  {
+   "word": "much.",
+   "start": 9.19,
+   "end": 9.49,
+   "prob": 0.97
+  },
+  {
+   "word": "I",
+   "start": 10.05,
+   "end": 10.25,
+   "prob": 0.97
+  },
+  {
+   "word": "killed",
+   "start": 10.31,
+   "end": 10.68,
+   "prob": 0.97
+  },
+  {
+   "word": "three",
+   "start": 10.74,
+   "end": 11.08,
+   "prob": 0.97
+  },
+  {
+   "word": "tomato",
+   "start": 11.14,
+   "end": 11.51,
+   "prob": 0.97
+  },
+  {
+   "word": "plants",
+   "start": 11.57,
+   "end": 11.94,
+   "prob": 0.97
+  },
+  {
+   "word": "that",
+   "start": 12.0,
+   "end": 12.3,
+   "prob": 0.97
+  },
+  {
+   "word": "way.",
+   "start": 12.36,
+   "end": 12.63,
+   "prob": 0.97
+  },
+  {
+   "word": "Now",
+   "start": 13.19,
+   "end": 13.46,
+   "prob": 0.97
+  },
+  {
+   "word": "I",
+   "start": 13.52,
+   "end": 13.72,
+   "prob": 0.97
+  },
+  {
+   "word": "check",
+   "start": 13.78,
+   "end": 14.12,
+   "prob": 0.97
+  },
+  {
+   "word": "the",
+   "start": 14.18,
+   "end": 14.45,
+   "prob": 0.97
+  },
+  {
+   "word": "soil",
+   "start": 14.51,
+   "end": 14.81,
+   "prob": 0.97
+  },
+  {
+   "word": "with",
+   "start": 14.87,
+   "end": 15.17,
+   "prob": 0.97
+  },
+  {
+   "word": "one",
+   "start": 15.23,
+   "end": 15.5,
+   "prob": 0.97
+  },
+  {
+   "word": "finger",
+   "start": 15.56,
+   "end": 15.93,
+   "prob": 0.97
+  },
+  {
+   "word": "first.",
+   "start": 15.99,
+   "end": 16.33,
+   "prob": 0.97
+  },
+  {
+   "word": "Dry",
+   "start": 16.89,
+   "end": 17.16,
+   "prob": 0.97
+  },
+  {
+   "word": "down",
+   "start": 17.22,
+   "end": 17.52,
+   "prob": 0.97
+  },
+  {
+   "word": "to",
+   "start": 17.58,
+   "end": 17.81,
+   "prob": 0.97
+  },
+  {
+   "word": "the",
+   "start": 17.87,
+   "end": 18.14,
+   "prob": 0.97
+  },
+  {
+   "word": "knuckle",
+   "start": 18.2,
+   "end": 18.61,
+   "prob": 0.97
+  },
+  {
+   "word": "means",
+   "start": 18.67,
+   "end": 19.01,
+   "prob": 0.97
+  },
+  {
+   "word": "water.",
+   "start": 19.07,
+   "end": 19.41,
+   "prob": 0.97
+  },
+  {
+   "word": "Damp",
+   "start": 19.97,
+   "end": 20.27,
+   "prob": 0.97
+  },
+  {
+   "word": "means",
+   "start": 20.33,
+   "end": 20.67,
+   "prob": 0.97
+  },
+  {
+   "word": "wait.",
+   "start": 20.73,
+   "end": 21.03,
+   "prob": 0.97
+  },
+  {
+   "word": "That",
+   "start": 21.59,
+   "end": 21.89,
+   "prob": 0.97
+  },
+  {
+   "word": "is",
+   "start": 21.95,
+   "end": 22.18,
+   "prob": 0.97
+  },
+  {
+   "word": "the",
+   "start": 22.24,
+   "end": 22.51,
+   "prob": 0.97
+  },
+  {
+   "word": "hole",
+   "start": 22.57,
+   "end": 22.87,
+   "prob": 0.97
+  },
+  {
+   "word": "trick.",
+   "start": 22.93,
+   "end": 23.27,
+   "prob": 0.97
+  },
+  {
+   "word": "Try",
+   "start": 23.83,
+   "end": 24.1,
+   "prob": 0.97
+  },
+  {
+   "word": "it",
+   "start": 24.16,
+   "end": 24.39,
+   "prob": 0.97
+  },
+  {
+   "word": "this",
+   "start": 24.45,
+   "end": 24.75,
+   "prob": 0.97
+  },
+  {
+   "word": "week.",
+   "start": 24.81,
+   "end": 25.11,
+   "prob": 0.97
+  }
+ ]
+}
